@@ -3,7 +3,7 @@
 # This script will take 2 files 
 # 1st with options to find -- 1 per line for each file
 # 2nd -- json formated as an elstic beanstalk describe-environment format
-# Purpose of script is to extract a list of optionis or values from the file
+# Purpose of script is to extract a list of options or values from the file
 # This just makes it easier to search for some options from a config
 # This version has the option of writing the settings to a file that can be used for upgrading env vars
 
