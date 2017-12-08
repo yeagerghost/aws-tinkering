@@ -12,6 +12,11 @@ then
   exit
 fi
 
+# Take care of cases where the raw file has multiple spaces between the equal sign for 
+# Variable and value
+tempfile="tempfile.tmp"
+sed -e 's/^     //' -e 's/ \{1,\}= \{1,\}/=/' $1 > $tempfile
+
 read_count=1
 var_count=`wc -l $1 | awk ' {print $1}'`
 
@@ -34,8 +39,9 @@ do
      echo "    }," >> $2
    fi
    ((read_count++))   
-done < $1
+done < $tempfile
 
 echo "]" >> $2
 
 cat $2
+rm -f $tempfile
