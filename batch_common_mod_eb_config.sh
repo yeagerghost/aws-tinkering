@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script takes a file with environment-names 1 per line and json formatted file with options to update
+# Script takes a file with environment-names, 1 per line and json formatted file with options to update
 # Script also takes region
 # Script then does an update-environment using the json formatted file
 # Easy way to get a list of environments is from eb list -a command if a lot of env are to be used
