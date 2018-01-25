@@ -8,7 +8,7 @@
 
 SRC_CLR='\033[0;96m' #CYAN
 DEST_CLR='\033[1;32m' #GREEN
-SCRIPT_CLR='\033[1;31m' #RED
+CONFIRM_CLR='\033[1;31m' #RED
 NC='\033[0m' # No Color
 
 if [ $# -ne 2 ]
@@ -47,4 +47,14 @@ do
 done < $env_pairs
 
 echo ""
-echo -e "To execute the displayed commands run the script ${SCRIPT_CLR}$run_swap_commands${NC}"
+echo -e "Do you wish to execute the above commands to swap the urls ? Enter ${CONFIRM_CLR}yes${NC} if so "
+read response
+if [ "$response" = "yes" ]
+then
+  echo "Wooo Hooo Swapping"
+else
+  echo "Exiting"
+fi
+
+rm -f $run_swap_commands $env_pairs
+
